@@ -56,6 +56,8 @@
 			let updating = false;
 
 			const editor = CodeMirror.fromTextArea( this.find( 'textarea' ), {
+				indentWithTabs: true,
+				tabSize: 2,
 				lineNumbers: true,
 				lineWrapping: true
 			});

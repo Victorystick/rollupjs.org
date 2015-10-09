@@ -14,17 +14,18 @@
 <script>
 	component.exports = {
 		oncomplete () {
-			let cm = CodeMirror( this.find( '#editor' ), {
+			const editor = CodeMirror( this.find( '#editor' ), {
+				tabSize: 2,
 				lineNumbers: true,
 				lineWrapping: true,
 				readOnly: true
 			});
 
-			cm.setSize( null, '100%' );
+			editor.setSize( null, '100%' );
 
 			this.observe( 'output', output => {
 				if ( typeof output === 'string' ) {
-					cm.setValue( output );
+					editor.setValue( output );
 				}
 			});
 		}
